@@ -3,7 +3,7 @@
 <img src="https://github.com/jayceazua/herd_immunity/blob/master/zombie-apocalypse.jpg" />
 
 ### Description
-A Zombie Apocalypse has started... Know how data science can bring back humanity to peace.
+A Zombie Apocalypse has started... Predict how data science can bring humanity back to peace.
 
 ### Start epidemic
 ``` python3 simulation.py 100000 0.90 ZOMBIE 0.70 0.25 10 ```
