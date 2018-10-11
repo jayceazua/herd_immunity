@@ -33,7 +33,8 @@ class Simulation(object):
         # TODO: Create a Logger object and bind it to self.logger.  You should use this
         # logger object to log all events of any importance during the simulation.  Don't forget
         # to call these logger methods in the corresponding parts of the simulation!
-        self.logger = None
+        self.logger = Logger(self.file_name)
+        self.logger.write_metadata(population_size, vacc_percentage, virus_name, mortality_rate, basic_repro_num)
 
 
 
@@ -72,6 +73,7 @@ class Simulation(object):
         while should_continue:
             self.time_step()
             time_step_counter += 1
+            self.logger.log_time_step(time_step_counter)
             should_continue = self._simulation_should_continue()
         print('The simulation has ended after {} turns.'.format(time_step_counter))
 
@@ -91,7 +93,7 @@ class Simulation(object):
                         interactions += 1
                         total_interactions += 1
                 else:
-                    person.did_survive_infection(self.mortality_rate)
+                    did_survive = person.did_survive_infection(self.mortality_rate)
                     if person.is_alive is True:
                         assert person.is_alive == True
                         assert person.is_vaccinated == True
@@ -99,6 +101,7 @@ class Simulation(object):
                         self.current_infected -= 1
                         self.total_healed += 1
                         interactions = 0
+
                     else:
                         assert person.is_alive == False
                         assert person.infected == False
@@ -106,6 +109,7 @@ class Simulation(object):
                         self.population_size -= 1
                         self.current_infected -= 1
                         interactions = 0
+        self.logger.log_infection_survival(person, did_survive)
         self._infect_newly_infected()
 
     def interaction(self, person, random_person): # 9/10 almost completed

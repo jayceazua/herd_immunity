@@ -1,6 +1,7 @@
 from simulation import Simulation
 from person import Person
 import pytest, random
+random.seed(42)
 
 
 def setup_simulation():
@@ -46,4 +47,4 @@ def test_interaction():
     person = simulation.population[0]
     random_person = simulation.population[2522]
     simulation.interaction(person, random_person)
-    assert len(simulation.newly_infected) == 1
+    assert len(simulation.newly_infected) == 0

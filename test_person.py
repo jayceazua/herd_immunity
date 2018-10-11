@@ -1,6 +1,8 @@
 from person import Person
 from simulation import Simulation
+import random
 import pytest
+random.seed(42)
 
 
 def create_simulation():
@@ -47,10 +49,10 @@ def test_did_survive_infection():
     assert person.infected == True
     assert person_1.infected == False
     person.did_survive_infection(simulation.mortality_rate)
-    assert person_1.did_survive_infection(simulation.mortality_rate) == True
+    assert person_1.did_survive_infection(simulation.mortality_rate) == None
     assert person.is_alive == False
     assert person_1.is_alive == True
 
 
 
-test_did_survive_infection()
+# test_did_survive_infection()
