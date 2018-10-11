@@ -7,7 +7,7 @@ class Logger(object):
     def __init__(self, file_name):
         # TODO:  Finish this initialization method.  The file_name passed should be the
         # full file name of the file that the logs will be written to.
-        self.file_name = None
+        self.file_name = file_name
 
     def write_metadata(self, pop_size, vacc_percentage, virus_name, mortality_rate, basic_repro_num):
         # TODO: Finish this method.  The simulation class should use this method
@@ -23,7 +23,7 @@ class Logger(object):
         # basic_repro_num):
         # - Writes the first line of a logfile, which will contain metadata on the
         #     parameters for the simulation.
-        file = open(self.file_name, 'w')
+        file = open(str(self.file_name), 'w')
         file.write("population size:{}\nvaccine percentage:{}\nvirus name:{}\nmortality rate:{}\nbasic reproduction number:{}\n".format(str(pop_size), str(vacc_percentage), str(virus_name), str(mortality_rate), str(basic_repro_num)))
         file.close()
 

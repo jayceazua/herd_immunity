@@ -6,7 +6,7 @@
 ...
 
 ### Start epidemic
-...
+``` python3 simulation.py 100000 0.90 ZOMBIE 0.70 0.25 10 ```
 
 ### Technologies:
 - Python 3.7.0
