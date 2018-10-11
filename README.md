@@ -5,7 +5,7 @@
 ### Description
 ...
 
-### To start the war
+### Start epidemic
 ...
 
 ### Technologies used:
