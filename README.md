@@ -8,7 +8,7 @@
 ### Start epidemic
 ...
 
-### Technologies used:
+### Technologies:
 - Python 3.7.0
 - Pytest 3.8.1
 
