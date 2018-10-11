@@ -122,9 +122,10 @@ class Simulation(object):
         else:
             are_you_lucky = random.random()
             if are_you_lucky > self.basic_repro_num:
-                pass
+                self.logger.log_interaction(person, random_person, False, True)
             else:
                 self.newly_infected.append(random_person._id)
+                self.logger.log_interaction(person, random_person, True, False)
         # TODO: Remember to call self.logger.log_interaction() during this method!
 
     def _infect_newly_infected(self):
