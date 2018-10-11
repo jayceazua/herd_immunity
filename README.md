@@ -1,6 +1,6 @@
-# Zombie Survival
+# Zombie Apocalypse
 
-<img src="https://github.com/jayceazua/herd_immunity/blob/master/zombie_survival.png" />
+<img src="https://github.com/jayceazua/herd_immunity/blob/master/zombie-apocalypse.jpg" />
 
 ### Description
 A Zombie Apocalypse has started... Predict with data science the outcome.
